@@ -1,20 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package ej7_tp5_santino_ramirez;
 
-/**
- *
- * @author ET20 - Alumno
- */
+package ej7_tp5_santino_ramirez;
+import java.util.Scanner;
 public class Ej7_tp5_santino_ramirez {
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+                     Scanner lector = new Scanner(System.in);
+        System.out.println("Cuantas filas quiiere");
+        int filas = lector.nextInt();
+        System.out.println("Cuantas columnas quiere?");
+        int columnas = lector.nextInt();
+        int [][]num1= new int[filas][columnas];
+        int x=0;
+        int y=0;
+        for (int i=0;i<filas;i++) {
+            for (int j=0;j<columnas;j++) {
+                System.out.print("Ingrese un numero [" + i + "][" + j + "]: ");
+                    num1[i][j] = lector.nextInt();
+                if (j % 2 != 0) {
+                    x = x + num1[i][j];
+                    y++;
+                }
+            }
+        }
+        for (int i=0;i<filas;i++) {
+            for (int j=0;j<columnas;j++) {
+                System.out.print("[" + num1[i][j] + "]");
+            }
+            System.out.println();
+        }
+        if (y==0){
+            y++;
+        }
+        System.out.println("el promedio es de:  " + x/y);
     }
-    
 }
+
