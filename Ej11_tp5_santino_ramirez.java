@@ -1,0 +1,67 @@
+package ej11_tp5_santino_ramirez;
+import java.util.Random;
+import java.util.Scanner;
+public class Ej11_tp5_santino_ramirez {
+
+    public static void main(String[] args) {
+        
+       Scanner scanner = new Scanner(System.in);
+        System.out.println("1 = Sumar");
+        System.out.println("2 = Restar");
+        System.out.println("3 = Multiplicar");
+        
+        int x = scanner.nextInt();
+        System.out.print("Ingrese el tamaño de la matriz NxN: ");
+        int n = scanner.nextInt();
+        int[][] matriz1 = new int[n][n];
+        int[][] matriz2 = new int[n][n];
+        int[][] resultado = new int[n][n];
+        System.out.println("\nMatriz 1");
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                System.out.print("Ingrese valor [" + i + "][" + j + "]: ");
+                matriz1[i][j] = scanner.nextInt();
+            }
+        }
+        System.out.println("\nMatriz 2");
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                System.out.print("Ingrese valor [" + i + "][" + j + "]: ");
+                matriz2[i][j] = scanner.nextInt();
+            }
+        }
+        switch (x) {
+            case 1:
+                for (int i=0;i<n;i++){
+                    for (int j=0;j<n;j++){
+                        resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+                    }
+                }
+                break;
+            case 2:
+                for (int i=0;i<n;i++){
+                    for (int j=0;j<n;j++){
+                        resultado[i][j] = matriz1[i][j] - matriz2[i][j];
+                    }
+                }
+                break;
+            case 3:
+                for (int i=0;i<n;i++){
+                    for (int j=0;j<n;j++){
+                        resultado[i][j] = matriz1[i][j] * matriz1[i][j];
+                    }
+                }
+                break;
+
+            default:
+                System.out.println("Opcion invalida");
+        }
+        System.out.println("Resultado:");
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                System.out.print("[" + resultado[i][j] + "]");
+            }
+            System.out.println();
+        }
+    }
+}   
